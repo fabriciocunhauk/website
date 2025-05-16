@@ -58,13 +58,15 @@ const MobileMenu: React.FC<{ navigation: NavigationProps[] }> = ({
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  console.log(isOpen);
+
   return (
     <>
       <div
         className={clsx(
-          "hidden",
-          isOpen &&
-            "flex fixed top-0 right-0 bottom-0 left-0 bg-white text-gray-dark z-20 w-full h-full overflow-y-scroll"
+          isOpen
+            ? "flex fixed top-0 right-0 bottom-0 left-0 bg-gray-900 text-gray-dark z-20 w-full h-full overflow-y-scroll"
+            : "hidden"
         )}
       >
         <Container
@@ -72,22 +74,13 @@ const MobileMenu: React.FC<{ navigation: NavigationProps[] }> = ({
             container: "flex flex-col gap-10 items-end w-full",
           }}
         >
-          <Button
-            classes={{
-              button:
-                "w-8 h-8 bg-transparent rounded hover:bg-red-primary/60 hover:text-white mt-1",
-            }}
+          <IoMdClose
+            className="text-4xl text-primary cursor-pointer mt-1 ml-1"
             onClick={toggleMenu}
-          >
-            <IoMdClose className="text-4xl" />
-          </Button>
+          />
+
           <Link href="/" className="mx-auto" onClick={toggleMenu}>
-            <Image
-              src={logo.src}
-              width={logo.width}
-              height={logo.height}
-              alt="Logo"
-            />
+            <Image src={logo} alt="Logo" className="w-40" />
           </Link>
           <ul className="flex flex-col text-center gap-10 mx-auto">
             {navigation.map(({ id, title, link }) => (
@@ -107,11 +100,12 @@ const MobileMenu: React.FC<{ navigation: NavigationProps[] }> = ({
       </div>
       <Button
         classes={{
-          button: "block xl:hidden bg-transparent w-8 h-8 rounded",
+          button: "block xl:hidden",
         }}
         onClick={toggleMenu}
+        size="sm"
       >
-        <GiHamburgerMenu className="w-5 h-5 m-auto" />
+        <GiHamburgerMenu className="text-white" size="24" />
       </Button>
     </>
   );
@@ -147,7 +141,7 @@ const Navbar: React.FC<NavbarProps> = ({ classes }) => {
     <Container
       classes={{
         container: clsx(
-          "fixed top-0 xl:top-20 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2 transition-all duration-300 ease-in-out z-10 w-full xl:rounded-full",
+          "fixed top-0 xl:top-20 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2 transition-all duration-300 ease-in-out z-50 w-full xl:rounded-full",
           classes?.wrapper,
           scrollPosition > 80
             ? "bg-white/90 shadow-lg"

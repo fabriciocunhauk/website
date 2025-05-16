@@ -6,31 +6,33 @@ import astronaut from "@/public/images/github-astronaut.svg";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex items-center bg-gray-900 relative pt-10 h-[900px]">
+    <section className="flex items-center bg-gray-900 relative pt-20 max-h-[1000px] overflow-hidden">
       <Container
         classes={{
-          container:
-            "relative grid grid-cols-1 md:grid-cols-2 items-center z-10",
+          container: "relative grid grid-cols-1 md:grid-cols-2 items-end z-10",
         }}
       >
-        <div className="space-y-6 text-white">
+        <div className="space-y-6 text-white ">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">
             Let&apos;s <span className="text-primary">Build</span> Something{" "}
             <span className="text-indigo-500">Great</span>
           </h1>
 
-          <p className="text-base sm:text-lg max-w-md mx-auto md:mx-0 font-semibold">
+          <p className="text-sm sm:text-lg max-w-md mx-auto md:mx-0 font-semibold">
             Hi, I&apos;m <span className="text-primary">Fabricio Cunha</span>, a
             frontend developer passionate about crafting fast, beautiful, and
-            user-friendly web experiences. With years of experience working with
-            companies like 4th Dimension Innovation and Spring, I specialize in
-            modern web technologies and{" "}
+            user-friendly web experiences. With years of experience, I
+            specialize in modern web technologies and{" "}
             <span className="text-indigo-500">
               delivering exceptional digital solutions.
             </span>
           </p>
         </div>
-        <Image src={astronaut} alt="GitHub Astronaut" className="w-[700px]" />
+        <Image
+          src={astronaut}
+          alt="GitHub Astronaut"
+          className="max-w-[650px]"
+        />
       </Container>
       <Image
         src={background}
