@@ -25,12 +25,12 @@ function About() {
               <span className="text-primary font-semibold">
                 Software Developer
               </span>{" "}
-              who thrives on turning ideas into innovative, user-friendly
-              solutions. With over 4 years of experience in the industry,
-              I&apos;ve honed my skills in crafting high-performance web
-              applications that deliver exceptional user experiences.{" "}
+              who thrives on transforming ideas into innovative, user-friendly
+              solutions. With over 4 years of industry experience, I&apos;ve
+              honed my skills in building high-performance web applications that
+              deliver exceptional{" "}
               <span className="text-indigo-400 font-medium">
-                delivering exceptional digital solutions.
+                digital experiences.
               </span>
             </p>
 
