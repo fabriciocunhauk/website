@@ -6,26 +6,23 @@ import astronaut from "@/public/images/github-astronaut.svg";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex items-center bg-gray-900 relative pt-20 max-h-[1000px] overflow-hidden">
+    <section className="flex items-center bg-gray-900 relative pt-40 max-h-[1000px] overflow-hidden">
       <Container
         classes={{
           container: "relative grid grid-cols-1 md:grid-cols-2 items-end z-10",
         }}
       >
-        <div className="space-y-6 text-white ">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Let&apos;s <span className="text-primary">Build</span> Something{" "}
-            <span className="text-indigo-500">Great</span>
+        <div className="space-y-6 text-white mb-10">
+          <h1 className="text-4xl lg:text-6xl font-bold">
+            Let&apos;s <span className="text-primary">Craft</span> Something{" "}
+            <span className="text-indigo-500">Amazing</span>
           </h1>
 
-          <p className="text-sm sm:text-lg max-w-md mx-auto md:mx-0 font-semibold">
+          <p className="text-sm sm:text-lg max-w-md mx-auto md:mx-0">
             Hi, I&apos;m <span className="text-primary">Fabricio Cunha</span>, a
-            frontend developer passionate about crafting fast, beautiful, and
-            user-friendly web experiences. With years of experience, I
-            specialize in modern web technologies and{" "}
-            <span className="text-indigo-500">
-              delivering exceptional digital solutions.
-            </span>
+            frontend developer passionate about building fast, beautiful, and
+            user-friendly{" "}
+            <span className="text-indigo-500">web experiences.</span>
           </p>
         </div>
         <Image
@@ -37,10 +34,10 @@ const Hero: React.FC = () => {
       <Image
         src={background}
         alt="Code Background"
-        className="absolute top-0 object-cover object-top h-full w-full opacity-50 z-0"
+        className="absolute top-0 object-cover object-top h-full w-full opacity-50"
       />
 
-      <div className="absolute bottom-0 left-0 right-0 z-0 h-[350px] bg-gradient-to-t from-gray-900 from-0% via-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[350px] bg-gradient-to-t from-gray-900 from-0% via-transparent" />
     </section>
   );
 };

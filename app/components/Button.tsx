@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     "flex items-center justify-center gap-2 transition ease-in-out duration-150 cursor-pointer";
 
   const variants = {
-    primary: "bg-primary hover:bg-primary-dark text-white",
+    primary: "bg-primary hover:bg-primary/70 text-white",
     secondary: "bg-secondary hover:bg-secondary-dark text-white",
     outline:
       "border-2 border-primary text-primary hover:bg-primary hover:text-white",

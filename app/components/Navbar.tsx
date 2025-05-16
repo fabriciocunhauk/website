@@ -58,8 +58,6 @@ const MobileMenu: React.FC<{ navigation: NavigationProps[] }> = ({
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  console.log(isOpen);
-
   return (
     <>
       <div
@@ -141,18 +139,16 @@ const Navbar: React.FC<NavbarProps> = ({ classes }) => {
     <Container
       classes={{
         container: clsx(
-          "fixed top-0 xl:top-20 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2 transition-all duration-300 ease-in-out z-50 w-full xl:rounded-full",
+          "fixed top-0 xl:top-20 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2 transition-all duration-300 ease-in-out z-20 w-full xl:rounded-full text-white",
           classes?.wrapper,
-          scrollPosition > 80
-            ? "bg-white/90 shadow-lg"
-            : "text-white bg-transparent"
+          scrollPosition > 80 ? "bg-gray-700/90 shadow-lg" : "bg-transparent"
         ),
       }}
       element="header"
     >
       <nav
         className={clsx(
-          "flex items-center justify-between",
+          "flex items-center justify-between px-0 lg:px-10",
           classes?.container
         )}
       >
