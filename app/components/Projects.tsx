@@ -54,7 +54,7 @@ function Projects() {
                   <Button
                     link={project.links.demo}
                     icon={<RiPagesFill size="20" />}
-                    variant="primary"
+                    variant="secondary"
                     size="sm"
                     target="_blank"
                     rel="noopener noreferrer"
