@@ -2,7 +2,7 @@ import React, { JSX } from "react";
 import Container from "./Container";
 import Card from "./Card";
 import Image from "next/image";
-import codeBg from "@/public/images/code-bg.jpg";
+import codeBg from "@/public/images/purple-code-bg.jpg";
 
 import {
   FaHtml5,
@@ -144,7 +144,7 @@ function SkillsSection() {
           <Image
             src={codeBg}
             alt="Skills Background"
-            className="absolute bottom-0 lg:-bottom-60 left-0 right-0 top-0 lg:-top-0 lg:-right-20 lg:-rotate-40 object-cover opacity-50 rounded-2xl shadow-2xl h-full"
+            className="absolute bottom-0 left-0 right-0 top-0 object-cover opacity-50 rounded-2xl shadow-2xl h-full scale-x-[-1]"
           />
         </Card>
       </Container>
