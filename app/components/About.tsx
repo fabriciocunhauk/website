@@ -49,7 +49,7 @@ function About() {
           <Image
             src={linkedinProfile}
             alt="Code Background"
-            className="absolute -bottom-60 top-120 lg:-top-48 -right-24 lg:-right-110 -rotate-20 lg:-rotate-40 object-cover opacity-50 rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105"
+            className="absolute -bottom-60 top-120 lg:-top-48 -right-24 lg:-right-110 -rotate-20 lg:-rotate-40 object-cover opacity-50 rounded-2xl shadow-2xl"
           />
         </Card>
       </Container>

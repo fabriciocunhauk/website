@@ -13,7 +13,7 @@ import {
   FaGitAlt,
 } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiExpress, SiPostgresql, SiSqlite } from "react-icons/si"; // Import new icons
+import { SiExpress, SiPostgresql, SiSqlite } from "react-icons/si";
 
 type Skill = {
   name: string;
@@ -55,12 +55,12 @@ const skillCategories: SkillCategory[] = [
       {
         name: "Express",
         icon: <SiExpress className="text-gray-300 text-4xl" />,
-      }, // Added Express
+      },
       {
         name: "Postgres",
         icon: <SiPostgresql className="text-blue-600 text-4xl" />,
-      }, // Added PostgreSQL
-      { name: "SQLite", icon: <SiSqlite className="text-cyan-500 text-4xl" /> }, // Added SQLite
+      },
+      { name: "SQLite", icon: <SiSqlite className="text-cyan-500 text-4xl" /> },
     ],
   },
   {
@@ -78,10 +78,9 @@ function SkillsSection() {
       <Container>
         <Card
           classes={{
-            card: "relative grid grid-rows-2 lg:grid-rows-1 text-white mb-16 bg-gray-800/90 backdrop-blur-sm p-12 rounded-2xl shadow-xl",
+            card: "relative grid grid-rows-1 text-white mb-16 bg-gray-800/90 backdrop-blur-sm p-12 rounded-2xl shadow-xl",
           }}
         >
-          {/* Section Title */}
           <div className="space-y-8 z-20">
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
               My <span className="text-primary">Technical</span> Skills
@@ -112,31 +111,25 @@ function SkillsSection() {
               end-to-end solutions.
             </p>
 
-            {/* Skills Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {skillCategories.map((category, index) => (
                 <div key={index}>
-                  {/* Category Title */}
                   <h3 className="text-xl font-semibold text-white mb-4">
                     {category.title}
                   </h3>
 
-                  {/* Category Description */}
                   <p className="text-base text-gray-200 mb-4">
                     {category.description}
                   </p>
 
-                  {/* Skills */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skillIndex}
-                        className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                        className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
                       >
-                        {/* Icon */}
                         <div className="mb-4">{skill.icon}</div>
 
-                        {/* Skill Name */}
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">
                           {skill.name}
                         </h3>
@@ -148,11 +141,10 @@ function SkillsSection() {
             </div>
           </div>
 
-          {/* Background Image */}
           <Image
-            src={codeBg} // Replace with your background image
+            src={codeBg}
             alt="Skills Background"
-            className="absolute -bottom-60 top-120 lg:-top-0 -right-24 lg:-right-20 -rotate-20 lg:-rotate-40 object-cover opacity-50 rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105"
+            className="absolute bottom-0 lg:-bottom-60 left-0 right-0 top-0 lg:-top-0 lg:-right-20 lg:-rotate-40 object-cover opacity-50 rounded-2xl shadow-2xl h-full"
           />
         </Card>
       </Container>
