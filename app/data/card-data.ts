@@ -2,14 +2,14 @@ import smartlist from '@/public/images/smartlist_desktop_screenshot.png'
 
 export const projects = [{
         id: 1,
-        name: "SmartList",
+        name: "SmartList PWA",
         imgURL: smartlist,
         links: {
             demo: "https://www.smart-list.co.uk/",
             github: "https://github.com/fabriciocunhauk/smartlist",
         },
         description: "",
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Node.js", "Express"],
     },
     {
         id: 2,

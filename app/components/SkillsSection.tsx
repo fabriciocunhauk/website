@@ -19,7 +19,14 @@ import {
   SiSqlite,
   SiTypescript,
   SiGithub,
+  SiTailwindcss,
+  SiStrapi,
+  SiShopify,
+  SiRemix,
+  SiGraphql,
+  SiRedux,
 } from "react-icons/si";
+import { LinnworksLogo } from "./LinnworksLogo";
 
 type Skill = {
   name: string;
@@ -52,6 +59,18 @@ const skillCategories: SkillCategory[] = [
         name: "TypeScript",
         icon: <SiTypescript className="text-blue-500 text-4xl" />,
       },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-teal-400 text-4xl" />,
+      },
+      {
+        name: "Redux",
+        icon: <SiRedux className="text-purple-500 text-4xl" />,
+      },
+      {
+        name: "GraphQL",
+        icon: <SiGraphql className="text-pink-500 text-4xl" />,
+      },
     ],
   },
   {
@@ -71,6 +90,29 @@ const skillCategories: SkillCategory[] = [
         icon: <SiPostgresql className="text-blue-600 text-4xl" />,
       },
       { name: "SQLite", icon: <SiSqlite className="text-cyan-500 text-4xl" /> },
+      {
+        name: "Strapi",
+        icon: <SiStrapi className="text-indigo-400 text-4xl" />,
+      },
+    ],
+  },
+  {
+    title: "E-Commerce & Frameworks",
+    description:
+      "Building high-performance e-commerce platforms and modern frameworks.",
+    skills: [
+      {
+        name: "Shopify (Hydrogen)",
+        icon: <SiShopify className="text-green-500 text-4xl" />,
+      },
+      {
+        name: "Linnworks",
+        icon: <LinnworksLogo />,
+      },
+      {
+        name: "Remix JS",
+        icon: <SiRemix className="text-purple-500 text-4xl" />,
+      },
     ],
   },
   {
@@ -125,7 +167,7 @@ function SkillsSection() {
               end-to-end solutions.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {skillCategories.map((category, index) => (
                 <div key={index}>
                   <h3 className="text-xl font-semibold text-white mb-4">
