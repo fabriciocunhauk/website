@@ -13,7 +13,13 @@ import {
   FaGitAlt,
 } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiExpress, SiPostgresql, SiSqlite } from "react-icons/si";
+import {
+  SiExpress,
+  SiPostgresql,
+  SiSqlite,
+  SiTypescript,
+  SiGithub,
+} from "react-icons/si";
 
 type Skill = {
   name: string;
@@ -42,6 +48,10 @@ const skillCategories: SkillCategory[] = [
         name: "Next.js",
         icon: <TbBrandNextjs className="text-black text-4xl" />,
       },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="text-blue-500 text-4xl" />,
+      },
     ],
   },
   {
@@ -68,6 +78,10 @@ const skillCategories: SkillCategory[] = [
     description: "Managing code changes and collaboration.",
     skills: [
       { name: "Git", icon: <FaGitAlt className="text-red-500 text-4xl" /> },
+      {
+        name: "GitHub",
+        icon: <SiGithub className="text-gray-300 text-4xl" />,
+      },
     ],
   },
 ];
