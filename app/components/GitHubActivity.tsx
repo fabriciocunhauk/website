@@ -96,7 +96,7 @@ const GitHubActivity: React.FC = () => {
   }
 
   return (
-    <section id="github-activity" className="text-white py-24">
+    <section id="github-activity" className="text-white pb-24">
       <Container>
         <Card classes={cardContainerClasses}>
           <div className="space-y-8 z-20">

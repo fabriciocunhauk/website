@@ -130,7 +130,7 @@ const skillCategories: SkillCategory[] = [
 
 function SkillsSection() {
   return (
-    <section id="skills" className="text-white py-24">
+    <section id="skills" className="text-white pb-24">
       <Container>
         <Card
           classes={{

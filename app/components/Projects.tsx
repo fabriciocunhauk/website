@@ -9,7 +9,7 @@ import { RiPagesFill } from "react-icons/ri";
 
 function Projects() {
   return (
-    <section id="projects" className="text-white pb-24">
+    <section id="projects" className="text-white pb-40">
       <Container>
         <div className="space-y-8 text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
