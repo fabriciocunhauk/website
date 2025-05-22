@@ -134,7 +134,7 @@ function SkillsSection() {
       <Container>
         <Card
           classes={{
-            card: "relative grid grid-rows-1 text-white mb-16 bg-gray-800/90 backdrop-blur-sm p-12 rounded-2xl shadow-xl",
+            card: "relative grid grid-rows-1 text-white mb-16 bg-gray-800/90 backdrop-blur-sm p-12 rounded-2xl shadow-xl hover:translate-none",
           }}
         >
           <div className="space-y-8 z-20">
