@@ -45,14 +45,14 @@ const GitHubActivity: React.FC = () => {
   }, [username]);
 
   const cardContainerClasses = {
-    card: "relative grid grid-rows-1 bg-gray-800/90 backdrop-blur-sm p-8 md:p-10 rounded-2xl shadow-xl",
+    card: "relative grid grid-rows-1 bg-gray-800/90 backdrop-blur-sm p-8 md:p-10 rounded-2xl shadow-xl  hover:translate-none",
   };
 
   const getGridSpan = (index: number) => {
-    if (index === 0) return "col-span-full md:col-span-2 row-span-2";
+    if (index === 0) return "col-span-full md:col-span-2 row-span-1";
     if (index === 1) return "col-span-full md:col-span-1";
-    if (index === 2) return "col-span-full md:col-span-1";
-    if (index === 3) return "col-span-full md:col-span-2";
+    if (index === 2) return "col-span-full md:col-span-2";
+    if (index === 3) return "col-span-full md:col-span-1";
 
     return "col-span-full md:col-span-1";
   };
@@ -110,7 +110,7 @@ const GitHubActivity: React.FC = () => {
               </p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-                {repos.slice(0, 6).map((repo, index) => (
+                {repos.slice(0, 7).map((repo, index) => (
                   <a
                     key={repo.id}
                     href={repo.html_url}
@@ -130,7 +130,7 @@ const GitHubActivity: React.FC = () => {
                     <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
                       {repo.name}
                     </h3>
-                    <p className="text-base text-gray-300 mb-4 flex-grow">
+                    <p className="text-base text-gray-300 mb-4">
                       {repo.description || "No description available."}
                     </p>
                     <div className="flex flex-wrap items-center justify-between text-sm text-gray-400 mt-auto pt-4 border-t border-gray-600">
