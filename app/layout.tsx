@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-GGEB703MKL";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://fabriciocunha.vercel.app";
 
 export const metadata: Metadata = {
