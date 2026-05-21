@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fabricio Cunha - Personal Portfolio
 
-## Getting Started
+Welcome to the repository for my personal portfolio website! This project serves to showcase my professional work, open-source contributions, and the various technologies I work with.
 
-First, run the development server:
+## 🚀 Tech Stack
 
+This project is built with modern web technologies:
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router, Turbopack)
+- **UI Library:** [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Analytics:** [Vercel Analytics](https://vercel.com/analytics)
+
+## ✨ Features
+
+- **Dynamic Project Showcase:** A clean, grid-based layout displaying various web development projects, complete with links to live demos, GitHub repositories, and tech stacks used.
+- **Modern UI:** Built with premium aesthetic principles, featuring glassmorphism, responsive design, and subtle micro-interactions.
+- **GitHub Activity:** Integration to showcase my recent GitHub activity.
+- **Performant & SEO Optimized:** Utilizing Next.js's built-in image optimization and server-side rendering where applicable.
+
+## 🛠️ Getting Started
+
+To run this project locally, follow these steps:
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/fabriciocunhauk/website.git
+cd website
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+Using `npm` (or your preferred package manager like `yarn`, `pnpm`, or `bun`):
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run the development server
+This project uses Turbopack for faster local development:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. View the application
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/`: Next.js App Router setup, including pages and layouts.
+- `app/components/`: Reusable React components (Buttons, Cards, Navigation, etc).
+- `app/data/`: Static data files such as the project details (`card-data.ts`).
+- `public/`: Static assets such as images and icons.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Feel free to open an issue or submit a pull request if you find any bugs or have suggestions for improvements.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Designed and built by [Fabricio Cunha](https://github.com/fabriciocunhauk)*
