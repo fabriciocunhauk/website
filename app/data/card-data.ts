@@ -1,6 +1,19 @@
-import smartlist from '@/public/images/smartlist_desktop_screenshot.png'
+import smartlist from '@/public/images/smartlist-desktop-home.jpeg'
+import spacegoogles from '@/public/images/space-googles-homepage.jpeg'
+import invoicePro from "@/public/images/invoicepro-homepage.jpeg"
 
-export const projects = [{
+export const projects = [
+    {
+        id: 1,
+        name: "Invoice Pro PWA",
+        imgURL: invoicePro,
+        links: {
+            demo: "https://invoice-pro.co.uk",
+        },
+        description: "",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Node.js", "Express"],
+    },
+    {
         id: 1,
         name: "SmartList PWA",
         imgURL: smartlist,
@@ -14,7 +27,7 @@ export const projects = [{
     {
         id: 2,
         name: "Space Googles",
-        imgURL: "https://github.com/fabriciocunhauk/space-googles/raw/master/src/assets/space-googles-homepage.jpeg",
+        imgURL: spacegoogles,
         links: {
             demo: "https://space-googles.co.uk",
             github: "https://github.com/fabriciocunhauk/space-googles",
