@@ -5,7 +5,7 @@ export const projects = [{
         name: "SmartList PWA",
         imgURL: smartlist,
         links: {
-            demo: "https://www.smart-list.co.uk/",
+            demo: "https://smart-list.co.uk/",
             github: "https://github.com/fabriciocunhauk/smartlist",
         },
         description: "",
@@ -13,6 +13,17 @@ export const projects = [{
     },
     {
         id: 2,
+        name: "Space Googles",
+        imgURL: "https://github.com/fabriciocunhauk/space-googles/raw/master/src/assets/space-googles-homepage.jpeg",
+        links: {
+            demo: "https://space-googles.co.uk",
+            github: "https://github.com/fabriciocunhauk/space-googles",
+        },
+        description: "",
+        technologies: ["Next Js", "Typescript", "Tailwind Css"],
+    },
+    {
+        id: 3,
         name: "Colonia Malhada",
         imgURL: "https://github.com/fabriciocunhauk/Projeto-chacara-colonia-malhada/raw/master/src/images/front-page.PNG",
         links: {
@@ -23,7 +34,7 @@ export const projects = [{
         technologies: ["React", "JavaScript ", "Styled-Components"],
     },
     {
-        id: 3,
+        id: 4,
         name: "Todo React",
         imgURL: "https://github.com/fabriciocunhauk/react-to-do-list/raw/master/src/assets/images/desktop-preview.jpg",
         links: {
@@ -34,7 +45,7 @@ export const projects = [{
         technologies: ["React", "JavaScript", "CSS"],
     },
     {
-        id: 4,
+        id: 5,
         name: "E-Comerce",
         imgURL: "https://github.com/fabriciocunhauk/React-crown-clothing/raw/master/src/assets/Readme%20img.png",
         links: {
@@ -45,7 +56,7 @@ export const projects = [{
         technologies: ["React", "JavaScript", "CSS"],
     },
     {
-        id: 5,
+        id: 6,
         name: "Interflix",
         imgURL: "https://github.com/fabriciocunhauk/React.js-interflix/raw/master/src/assets/imagens/Front-photo.PNG",
         links: {
@@ -56,7 +67,7 @@ export const projects = [{
         technologies: ["React", "JavaScript", "Styled-Components"],
     },
     {
-        id: 6,
+        id: 7,
         name: "Loopstudios",
         imgURL: "https://github.com/fabriciocunhauk/LOOPSTUDIO-LANDING-PAGE/raw/master/public/assets/design/desktop-preview.jpg",
         links: {
