@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import React from "react";
+import type { ReactNode } from "react";
 
 type CardProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   classes?: { card?: string };
 };
 
-function Card({ children, classes }: CardProps) {
+export default function Card({ children, classes }: CardProps) {
   return (
     <div
       className={clsx(
@@ -18,5 +18,3 @@ function Card({ children, classes }: CardProps) {
     </div>
   );
 }
-
-export default Card;

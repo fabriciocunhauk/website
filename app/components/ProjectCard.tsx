@@ -1,25 +1,13 @@
-import React from "react";
-import Card from "./Card";
-import Image, { StaticImageData } from "next/image";
-import Button from "./Button";
+import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { RiPagesFill } from "react-icons/ri";
+import Card from "./Card";
+import Button from "./Button";
+import type { Project } from "@/app/data/card-data";
 
-export interface Project {
-  id: number;
-  name: string;
-  imgURL: string | StaticImageData;
-  links: {
-    demo: string;
-    github?: string;
-  };
-  description: string;
-  technologies: string[];
-}
-
-interface ProjectCardProps {
+type ProjectCardProps = {
   project: Project;
-}
+};
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
@@ -48,9 +36,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
 
         <div className="flex flex-wrap gap-2 pt-2">
-          {project.technologies.map((tech, idx) => (
+          {project.technologies.map((tech) => (
             <span
-              key={idx}
+              key={tech}
               className="bg-primary/10 border border-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold tracking-wide"
             >
               {tech}
@@ -68,9 +56,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             Live Demo
           </Button>
-          {project.links?.github && (
+          {project.links.github && (
             <Button
-              link={project.links?.github}
+              link={project.links.github}
               icon={<FaGithub size="20" />}
               variant="outline"
               size="sm"

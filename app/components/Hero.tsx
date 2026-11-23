@@ -1,10 +1,9 @@
-import React from "react";
 import Image from "next/image";
 import Container from "./Container";
 import background from "@/public/images/code-bg.jpg";
 import astronaut from "@/public/images/github-astronaut.svg";
 
-const Hero: React.FC = () => {
+export default function Hero() {
   return (
     <section className="flex items-center bg-gray-900 relative pt-40 max-h-[1000px] overflow-hidden">
       <Container
@@ -33,13 +32,11 @@ const Hero: React.FC = () => {
       </Container>
       <Image
         src={background}
-        alt="Code Background"
+        alt=""
         className="absolute top-0 object-cover object-top h-full w-full opacity-50"
       />
 
       <div className="absolute bottom-0 left-0 right-0 h-[350px] bg-gradient-to-t from-gray-900 from-0% via-transparent" />
     </section>
   );
-};
-
-export default Hero;
+}

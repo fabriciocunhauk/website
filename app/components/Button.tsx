@@ -1,21 +1,42 @@
 import clsx from "clsx";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
+
+const BUTTON_STYLES = Object.freeze({
+  base: "flex items-center justify-center gap-2 transition ease-in-out duration-150 cursor-pointer",
+  disabled: "opacity-30 cursor-not-allowed pointer-events-none",
+  variants: {
+    primary: "bg-primary hover:bg-primary/70 text-white",
+    secondary: "bg-indigo-500 hover:bg-primary text-white",
+    outline:
+      "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+    ghost: "hover:bg-gray-100 text-gray-700",
+  },
+  sizes: {
+    sm: "text-sm px-2 py-2 rounded-lg",
+    md: "text-base px-4 py-3 rounded-xl",
+    lg: "text-lg px-6 py-4 rounded-2xl",
+  },
+});
 
 type ButtonProps = {
   children: ReactNode;
-  icon?: React.ReactNode;
-  type?: "button" | "submit" | "reset" | undefined;
+  icon?: ReactNode;
+  type?: "button" | "submit" | "reset";
   link?: string;
-  variant?: "primary" | "secondary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
+  variant?: keyof typeof BUTTON_STYLES.variants;
+  size?: keyof typeof BUTTON_STYLES.sizes;
   classes?: { link?: string; button?: string };
   disabled?: boolean;
   fullWidth?: boolean;
-} & React.AnchorHTMLAttributes<HTMLAnchorElement> &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & AnchorHTMLAttributes<HTMLAnchorElement> &
+  ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
   children,
   icon,
   type = "button",
@@ -26,33 +47,13 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   fullWidth = false,
   ...props
-}) => {
-  const baseStyles =
-    "flex items-center justify-center gap-2 transition ease-in-out duration-150 cursor-pointer";
-
-  const variants = {
-    primary: "bg-primary hover:bg-primary/70 text-white",
-    secondary: "bg-indigo-500 hover:bg-primary text-white",
-    outline:
-      "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-    ghost: "hover:bg-gray-100 text-gray-700",
-  };
-
-  const sizes = {
-    sm: "text-sm px-2 py-2 rounded-lg",
-    md: "text-base px-4 py-3 rounded-xl",
-    lg: "text-lg px-6 py-4 rounded-2xl",
-  };
-
-  const widthStyles = fullWidth ? "w-full" : "max-w-max";
-  const disabledStyles = "opacity-30 cursor-not-allowed pointer-events-none";
-
+}: ButtonProps) {
   const buttonStyles = clsx(
-    baseStyles,
-    variants[variant],
-    sizes[size],
-    widthStyles,
-    disabled && disabledStyles,
+    BUTTON_STYLES.base,
+    BUTTON_STYLES.variants[variant],
+    BUTTON_STYLES.sizes[size],
+    fullWidth ? "w-full" : "max-w-max",
+    disabled && BUTTON_STYLES.disabled,
     classes?.button
   );
 
@@ -75,6 +76,4 @@ const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
-
-export default Button;
+}
