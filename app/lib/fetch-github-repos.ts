@@ -1,6 +1,6 @@
 import { isGitHubRepo, type GitHubRepo } from "./is-github-repo";
 
-export type GitHubReposResult =
+type GitHubReposResult =
   | Readonly<{ ok: true; repos: ReadonlyArray<GitHubRepo> }>
   | Readonly<{ ok: false; error: string }>;
 

@@ -12,7 +12,7 @@ import sql from "@/public/images/svg/sql.svg";
 import graphQL from "@/public/images/svg/graphql.svg";
 import tailwind from "@/public/images/svg/tailwindcss-icon.svg";
 
-export type TechIconLink = Readonly<{
+type TechIconLink = Readonly<{
   id: number;
   name: string;
   path: StaticImageData;

@@ -28,7 +28,7 @@ type Skill = Readonly<{
   icon: ReactNode;
 }>;
 
-export type SkillCategory = Readonly<{
+type SkillCategory = Readonly<{
   title: string;
   description: string;
   skills: ReadonlyArray<Skill>;
