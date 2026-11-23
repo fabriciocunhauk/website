@@ -1,40 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import JsonLd from "./components/JsonLd";
+import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-GGEB703MKL";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://fabriciocunha.vercel.app";
+import "./globals.css";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/Footer";
+import JsonLd from "./components/JsonLd";
+import { SITE_CONFIG } from "./lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Fabricio Cunha | Frontend Developer",
-  description: "Crafting amazing web experiences with React, Next.js, and TypeScript. Frontend Developer passionate about building fast and beautiful websites.",
-  metadataBase: new URL(BASE_URL),
+  title: SITE_CONFIG.title,
+  description: SITE_CONFIG.description,
+  metadataBase: new URL(SITE_CONFIG.baseUrl),
   openGraph: {
-    title: "Fabricio Cunha | Frontend Developer",
-    description: "Frontend Developer passionate about building fast, beautiful, and user-friendly web experiences.",
-    url: BASE_URL,
-    siteName: "Fabricio Cunha Portfolio",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.shortDescription,
+    url: SITE_CONFIG.baseUrl,
+    siteName: SITE_CONFIG.siteName,
     images: [
       {
-        url: "/images/linkedin-profile.png", // Using an existing image as OG image
+        url: SITE_CONFIG.ogImage,
         width: 1200,
         height: 630,
-        alt: "Fabricio Cunha",
+        alt: SITE_CONFIG.name,
       },
     ],
     locale: "en_US",
@@ -42,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fabricio Cunha | Frontend Developer",
-    description: "Frontend Developer passionate about building fast, beautiful, and user-friendly web experiences.",
-    images: ["/images/linkedin-profile.png"],
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.shortDescription,
+    images: [SITE_CONFIG.ogImage],
   },
   robots: {
     index: true,
@@ -55,19 +43,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
-      >
+      <body className="antialiased bg-gray-900">
         <JsonLd />
         <Navbar />
         {children}
         <Footer />
         <Analytics />
-        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+        <GoogleAnalytics gaId={SITE_CONFIG.gaId} />
       </body>
     </html>
   );

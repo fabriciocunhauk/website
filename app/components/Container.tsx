@@ -1,15 +1,18 @@
 import clsx from "clsx";
-import { ReactNode, type JSX } from "react";
+import type { JSX, ReactNode } from "react";
+
+const SIZE_MAP = Object.freeze({
+  xs: "max-w-md",
+  sm: "max-w-3xl",
+  md: "max-w-6xl",
+  lg: "max-w-7xl",
+});
 
 type ContainerProps = {
   children: ReactNode;
   element?: keyof JSX.IntrinsicElements;
   classes?: { container?: string };
-  size?: string;
-};
-
-type SizeMapProps = {
-  [key: string]: string;
+  size?: keyof typeof SIZE_MAP;
 };
 
 export default function Container({
@@ -18,16 +21,9 @@ export default function Container({
   classes,
   size = "lg",
 }: ContainerProps) {
-  const sizeMap: SizeMapProps = {
-    xs: "max-w-md",
-    sm: "max-w-3xl",
-    md: "max-w-6xl",
-    lg: "max-w-7xl",
-  };
-
   const className = clsx(
     "mx-auto py-4 px-10 xl:px-0",
-    sizeMap[size],
+    SIZE_MAP[size],
     classes?.container
   );
 

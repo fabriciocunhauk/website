@@ -1,28 +1,24 @@
-import React from 'react'
+import { SITE_CONFIG } from "@/app/lib/site-config";
+import { SOCIAL_LINKS } from "@/app/data/social-links";
 
-const JsonLd: React.FC = () => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://fabriciocunha.vercel.app'
-  
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Fabricio Cunha",
-    "url": baseUrl,
-    "jobTitle": "Frontend Developer",
-    "sameAs": [
-      "https://www.linkedin.com/in/fabricio-cunha-7b7392162/",
-      "https://github.com/fabriciocunhauk",
-      "https://stackoverflow.com/users/13144771/fabricio-cunha"
-    ],
-    "description": "Frontend Developer passionate about building fast, beautiful, and user-friendly web experiences."
-  }
+const PERSON_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE_CONFIG.name,
+  url: SITE_CONFIG.baseUrl,
+  jobTitle: SITE_CONFIG.jobTitle,
+  sameAs: Object.values(SOCIAL_LINKS),
+  description: SITE_CONFIG.shortDescription,
+};
 
+// Escape "<" so the serialized JSON can never close the <script> tag early.
+const serializedSchema = JSON.stringify(PERSON_SCHEMA).replace(/</g, "\\u003c");
+
+export default function JsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: serializedSchema }}
     />
-  )
+  );
 }
-
-export default JsonLd

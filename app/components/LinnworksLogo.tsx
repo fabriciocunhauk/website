@@ -1,4 +1,4 @@
-export const LinnworksLogo = () => {
+export default function LinnworksLogo() {
   return (
     <svg
       width="100"
@@ -7,7 +7,7 @@ export const LinnworksLogo = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_205_2)">
+      <g clipPath="url(#clip0_205_2)">
         <mask
           id="mask0_205_2"
           style={{ maskType: "luminance" }}
@@ -89,4 +89,4 @@ export const LinnworksLogo = () => {
       </defs>
     </svg>
   );
-};
+}

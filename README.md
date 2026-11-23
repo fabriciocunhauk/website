@@ -45,11 +45,30 @@ npm run dev
 ### 4. View the application
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## 🧪 Scripts
+
+| Command | What it does |
+| :--- | :--- |
+| `npm run dev` | Start the dev server (Turbopack) on port 3000 |
+| `npm run build` | Production build |
+| `npm run typecheck` | TypeScript check (`tsc --noEmit`) |
+| `npm run lint` | ESLint (Next.js core-web-vitals + TypeScript rules) |
+| `npm test` | Vitest unit tests |
+| `npm run test:coverage` | Unit tests with V8 coverage for `app/lib` |
+| `npm run test:e2e` | Playwright smoke tests (starts its own dev server on port 3100) |
+
+Run `npx playwright install chromium` once before the first E2E run.
+
 ## 📁 Project Structure
 
-- `app/`: Next.js App Router setup, including pages and layouts.
-- `app/components/`: Reusable React components (Buttons, Cards, Navigation, etc).
-- `app/data/`: Static data files such as the project details (`card-data.ts`).
+- `app/`: Next.js App Router entry points (`layout.tsx`, `page.tsx`, `robots.ts`, `sitemap.ts`).
+- `app/components/`: Page sections and shared UI primitives (`Button`, `Card`, `Container`, `SectionHeading`).
+  - `app/components/navbar/`: Navbar, desktop navigation and mobile menu.
+  - `app/components/github/`: GitHub activity grid (server-rendered, cached for 1 hour).
+- `app/data/`: Static content — projects (`card-data.ts`), skills, tech icons, navigation and social links.
+- `app/hooks/`: Client-side React hooks.
+- `app/lib/`: Framework-agnostic helpers and site config (`site-config.ts` is the single source for URLs, GA ID and SEO copy), with colocated `*.test.ts` unit tests.
+- `e2e/`: Playwright end-to-end specs.
 - `public/`: Static assets such as images and icons.
 
 ## 🤝 Contributions

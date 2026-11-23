@@ -1,12 +1,13 @@
-import React from "react";
+import Image from "next/image";
+import { CiLinkedin } from "react-icons/ci";
 import Container from "./Container";
 import Card from "./Card";
-import linkedinProfile from "@/public/images/linkedin-profile.png";
-import Image from "next/image";
 import Button from "./Button";
-import { CiLinkedin } from "react-icons/ci";
+import SectionHeading from "./SectionHeading";
+import linkedinProfile from "@/public/images/linkedin-profile.png";
+import { SOCIAL_LINKS } from "@/app/data/social-links";
 
-function About() {
+export default function About() {
   return (
     <section id="about" className="text-white py-24">
       <Container>
@@ -16,9 +17,9 @@ function About() {
           }}
         >
           <div className="space-y-8 z-20">
-            <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
+            <SectionHeading>
               <span className="text-primary">About</span> Me
-            </h2>
+            </SectionHeading>
 
             <p className="text-base sm:text-xl max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed text-gray-200">
               I&apos;m a{" "}
@@ -35,7 +36,7 @@ function About() {
             </p>
 
             <Button
-              link="https://www.linkedin.com/in/fabricio-cunha-uk/"
+              link={SOCIAL_LINKS.linkedin}
               icon={<CiLinkedin size={28} />}
               variant="outline"
               size="lg"
@@ -48,7 +49,7 @@ function About() {
 
           <Image
             src={linkedinProfile}
-            alt="Code Background"
+            alt="Fabricio Cunha"
             className="absolute -bottom-60 top-120 lg:-top-48 -right-24 lg:-right-110 -rotate-20 lg:-rotate-40 object-cover opacity-50 rounded-2xl shadow-2xl"
           />
         </Card>
@@ -56,5 +57,3 @@ function About() {
     </section>
   );
 }
-
-export default About;
